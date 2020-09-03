@@ -11,19 +11,19 @@ import java.util.concurrent.TimeUnit;
 public class Base {
     WebDriver driver;
 
+
+
     public WebDriver initializeDriver() throws IOException {
-
-
         Properties prop = new Properties();
         FileInputStream fs = new FileInputStream("C:\\Users\\DEEPAK\\Documents\\GitHub\\EndToEndFramework\\Selenium\\src\\main\\dataProperties");
         prop.load(fs);
         String browserName = prop.getProperty("browser");
-        if (browserName == "chrome") {
+        if (browserName.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-            driver.get("");
 
-        } else if (browserName == "firefox") {
+
+        } else if (browserName.equals("firefox")) {
             WebDriverManager.chromedriver().setup();
             driver = new FirefoxDriver();
             driver.get("");
