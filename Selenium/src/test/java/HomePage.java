@@ -1,4 +1,6 @@
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pageObject.LandingPage;
@@ -7,10 +9,14 @@ import pageObject.LoginPage;
 import java.io.IOException;
 
 public class HomePage extends Base {
+    @BeforeTest
+    public void initialize() throws IOException {
+        driver = initializeDriver();
+        driver.get(prop.getProperty("url"));
+    }
 
     @Test(dataProvider = "getData")
-    public void homePageNavigation(String username,String Password) throws IOException {
-        driver = initializeDriver();
+    public void homePageNavigation(String username, String Password) throws IOException {
         driver.get(prop.getProperty("url"));
         LandingPage lp = new LandingPage(driver);
         lp.getLogin().click();
@@ -29,5 +35,10 @@ public class HomePage extends Base {
         data[1][0] = "sallu";
         data[1][1] = "khan";
         return data;
+    }
+
+    @AfterTest
+    public void tearDown() {
+        driver.close();
     }
 }

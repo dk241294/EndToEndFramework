@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class LandingPage {
     WebDriver driver;
-    By signIn = By.cssSelector("a[href*='sign_in']");
+    By signIn = By.xpath("//span[contains(text(),'Login')]");
     By title = By.xpath("//h2[contains(text(),'Featured Courses')]");
     By navigationbar= By.xpath("//div[@role='navigation']");
 
