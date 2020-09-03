@@ -8,11 +8,10 @@ import java.io.IOException;
 
 public class HomePage extends Base {
 
-
     @Test(dataProvider = "getData")
     public void homePageNavigation(String username,String Password) throws IOException {
         driver = initializeDriver();
-        driver.get("http://www.qaclickacademy.com/");
+        driver.get(prop.getProperty("url"));
         LandingPage lp = new LandingPage(driver);
         lp.getLogin().click();
         LoginPage l = new LoginPage(driver);

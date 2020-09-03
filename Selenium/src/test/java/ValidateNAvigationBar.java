@@ -11,7 +11,7 @@ public class ValidateNAvigationBar extends Base {
     public void validate()  throws IOException {
         // Base b= new Base(driver);
         driver=initializeDriver();
-        driver.get("http://www.qaclickacademy.com/");
+        driver.get(prop.getProperty("url"));
         LandingPage lp=new LandingPage(driver);
         //lp.getTitle();
        // Assert.assertEquals(lp.getTitle().getText(),"FEATURED COURSES");

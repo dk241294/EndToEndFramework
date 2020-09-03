@@ -11,11 +11,11 @@ import java.util.concurrent.TimeUnit;
 public class Base {
     WebDriver driver;
 
-
+    Properties prop;
 
 
     public WebDriver initializeDriver() throws IOException {
-        Properties prop = new Properties();
+        prop = new Properties();
         FileInputStream fs = new FileInputStream("C:\\Users\\DEEPAK\\Documents\\GitHub\\EndToEndFramework\\Selenium\\src\\main\\dataProperties");
         prop.load(fs);
         String browserName = prop.getProperty("browser");
