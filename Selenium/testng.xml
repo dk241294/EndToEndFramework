@@ -7,7 +7,6 @@
             <class name="ValidateNAvigationBar"/>
             <class name="ValidateTitle"/>
 
-
         </classes>
 
     </test>
