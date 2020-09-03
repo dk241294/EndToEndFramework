@@ -13,6 +13,7 @@ public class Base {
 
 
 
+
     public WebDriver initializeDriver() throws IOException {
         Properties prop = new Properties();
         FileInputStream fs = new FileInputStream("C:\\Users\\DEEPAK\\Documents\\GitHub\\EndToEndFramework\\Selenium\\src\\main\\dataProperties");
